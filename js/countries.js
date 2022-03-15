@@ -11,12 +11,36 @@ const displayCountries = countries => {
     const container = document.getElementById('countries')
     container.innerHTML = allCountriesHTML.join(' ');
 }
-const getCountryHTML = country => {
+
+//derectly destructuring in perameter
+const getCountryHTML = ({ name, flags, area, region }) => {
     return `
     <div class="country">
-    <h2>${country.name.common}</h2>
-    <img src="${country.flags.png}"</img>
+    <h2>${name.common}</h2>
+    <p>Area:${area}</p>
+    <p>contenent:${region}</p>
+    <img src="${flags.png}"</img>
     </div>
     `
 }
+// const getCountryHTML = country => {
+//main form
+//     return `
+//     <div class="country">
+//     <h2>${country.name.common}</h2>
+//     <img src="${country.flags.png}"</img>
+//     </div>
+//     `
+// }
+
+// const getCountryHTML = country => {
+//option 1
+//     const { name, flags } = country;
+//     return `
+//     <div class="country">
+//     <h2>${name.common}</h2>
+//     <img src="${flags.png}"</img>
+//     </div>
+//     `
+// }
 loadCountries()
